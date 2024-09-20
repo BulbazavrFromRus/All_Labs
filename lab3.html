@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lab3.css">
+    <title>Random Number Operations</title>
+</head>
+<body>
+    <div id="output" class="output"></div>
+
+    <script>
+        function displayText(text, taskClass) {
+            const outputDiv = document.getElementById('output');
+            const taskDiv = document.createElement('div');
+            taskDiv.className = 'output ' + taskClass;
+            taskDiv.innerHTML = text + "\n";
+            outputDiv.appendChild(taskDiv);
+        }
+
+        // 1. Generate a random number in the range of -100 to 100
+        displayText("1. Взять рандомное число в диапазоне от -100 до 100", "task1");
+        let rand = Math.floor(Math.random() * 201) - 100;
+        displayText("Рандомное число  " + rand, "task1");
+
+        // a. Check if the number is negative or positive
+        displayText("a.", "task1");
+        if (rand < 0) {
+            displayText(rand + " отрицательное", "task1");
+        } else {
+            displayText(rand + " положительное", "task1");
+        }
+
+        // b. Check if the number is even or odd
+        displayText("b.", "task1");
+        if (rand % 2 === 0) {
+            displayText(rand + " чётное", "task1");
+        } else {
+            displayText(rand + " нечётное", "task1");
+        }
+
+        displayText("\n");
+
+        // 2.
+        displayText("2. Взять рандомное число", "task2");
+        rand = Math.floor(Math.random() * 2001) - 1000;
+        displayText("Рандомное число " + rand, "task2");
+
+        displayText("a. Вывести в консоль первую цифру этого числа.", "task2");
+        rand = Math.abs(rand);
+        let firstDigit = parseInt(String(rand)[0]);
+        displayText("Первая цифра числа: " + firstDigit, "task2");
+
+        displayText("b. Вывести в консоль последнюю цифру этого числа.", "task2");
+        let lastDigit = rand % 10;
+        displayText("Последняя цифра числа: " + lastDigit, "task2");
+
+        displayText("c. Вывести в консоль сумму первой и последней цифры этого числа.", "task2");
+        let sumFirstAndLast = firstDigit + lastDigit;
+        displayText(sumFirstAndLast, "task2");
+
+        displayText("d. Вывести количество цифр в этом числе", "task2");
+        let countNum = String(rand).length;
+        displayText(countNum, "task2");
+
+        displayText("\n");
+
+       
+        displayText("3. Придумать строку.", "task3");
+        let str = "hello world";
+        let lengthStr = str.length;
+
+        displayText("a. Вывести в консоль длину этой строки.", "task3");
+        displayText(lengthStr, "task3");
+
+        displayText("b. Вывести в консоль последний символ этой строки.", "task3");
+        let lastSymbol = str.charAt(str.length - 1);
+        displayText("Последний символ строки: " + lastSymbol, "task3");
+
+        displayText("c. Перебрать и вывести в консоль по очереди все символы с конца строки.", "task3");
+        for (let i = lengthStr; i >= 0; i--) {
+            displayText(str.charAt(i), "task3");
+        }
+
+        displayText("\n");
+
+        
+        displayText("4. Придумать 2 строки.", "task4");
+        let str1 = "Первая строка";
+        let str2 = "Вторая строка";
+
+
+        displayText("a. Соединить их через символ “&”. Вывести в консоль общую строку.", "task4");
+        let commonLine = str1 + "&" + str2;
+        displayText(commonLine, "task4");
+
+        displayText("b. Сравнить длину строк. Вывести в консоль, ту что длиннее.", "task4");
+        if (str1.length > str2.length) {
+            displayText(str1, "task4");
+        } else {
+            displayText(str2, "task4");
+        }
+
+        displayText("\n");
+
+    
+        displayText("5. Взять 2 рандомных числа в диапазоне от 1 до 100", "task5");
+        let firstNum = Math.floor(Math.random() * 100) + 1;
+        let secondNum = Math.floor(Math.random() * 100) + 1;
+
+        displayText("Первое число " + firstNum, "task5");
+        displayText("Второе число " + secondNum, "task5");
+
+        displayText("a. Проверить, что первые цифры этих чисел совпадают.", "task5");
+        let firstDigitNum = parseInt(String(firstNum)[0]);
+        let secondDigitNum = parseInt(String(secondNum)[0]);
+
+        if (firstDigitNum === secondDigitNum) {
+            displayText("The first digits of two numbers are same", "task5");
+        } else {
+            displayText("The first digits of two numbers are different", "task5");
+        }
+
+        displayText("b. Проверить, что первое число без остатка делится на второе", "task5");
+        if (firstNum % secondNum === 0) {
+            displayText("Первое число делится на второе без остатка", "task5");
+        } else {
+            displayText("Первое число делится на второе с остатком", "task5");
+        }
+
+        displayText("c. Сравнить числа (вывести в консоль большее).", "task5");
+        if (firstNum > secondNum) {
+            displayText("Первое число " + firstNum + " больше чем второе " + secondNum, "task5");
+        } else {
+            displayText("Второе число " + secondNum + " больше чем первое " + firstNum, "task5");
+        }
+
+        displayText("\n");
+
+
+        displayText("6. Взять 2 рандомных числа в диапазоне от 1 до 100", "task6");
+        firstNum = Math.floor(Math.random() * 100) + 1;
+        secondNum = Math.floor(Math.random() * 100) + 1;
+
+        let firstNum1 = 12;
+        let secondNUm1 = 6;
+
+        displayText("a. Вывести в консоль остаток от деления первого числа на второе.", "task6");
+        let remainder = firstNum1 % secondNUm1;
+        displayText("Остаток от деления первого числа на второе " + remainder, "task6");
+
+        displayText("b. Вывести в консоль сумму чисел.", "task6");
+        let sumNumbers = firstNum + secondNum;
+        displayText("Сумма чисел первого на второе " + sumNumbers, "task6");
+
+        let multiplicationOfNumbers = firstNum * secondNum;
+        displayText("c. Вывести в консоль произведение чисел. " + multiplicationOfNumbers, "task6");
+
+        displayText("\n");
+
+        
+        displayText("7. Взять 3 рандомных числа в диапазоне от 1 до 50", "task7");
+    
+    
+        let firstNum3 = Math.floor(Math.random() * 50) + 1;
+        let secondNum3 = Math.floor(Math.random() * 50) + 1;
+        let thirdNum3 = Math.floor(Math.random() * 50) + 1;
+
+        displayText("Вывести три числа: ", "task7");
+        displayText(firstNum3, "task7");
+        displayText(secondNum3, "task7");
+        displayText(thirdNum3, "task7");
+
+        let sumNumbers3 = firstNum3 + secondNum3 + thirdNum3;
+        let count = 3;
+
+        let average = sumNumbers3 / count;
+        displayText("a. Вывести в консоль среднее арифметическое.", "task7");
+        displayText("Среднее арифметическое трёх чисел " + average, "task7");
+
+        displayText("b. Вывести в консоль сумму квадратов.", "task7");
+        let sumOfSquares = firstNum3 * firstNum3 + secondNum3 * secondNum3 + thirdNum3 * thirdNum3;
+        displayText("Сумма квадратов " + sumOfSquares, "task7");
+
+        displayText("c. Вывести в консоль наибольшее из них", "task7");
+        let maxValue = Math.max(firstNum3, secondNum3, thirdNum3);
+        displayText("Наибольшее из трёх значений " + maxValue, "task7");
+
+        displayText("d. Вывести в консоль наименьшее из них", "task7");
+        let minValue = Math.min(firstNum3, secondNum3, thirdNum3);
+        displayText("Наименьшее из трёх значений " + minValue, "task7");
+    </script>
+</body>
+</html>
+

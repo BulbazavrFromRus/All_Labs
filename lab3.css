@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.output {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.task1 {
+    background-color: #3498db; /* Blue */
+}
+
+.task2 {
+    background-color: #e74c3c; /* Red */
+}
+
+.task3 {
+    background-color: yellowgreen; /* Orange */
+}
+
+.task4 {
+    background-color: green; /* Green */
+}
+
+.task5 {
+    background-color: #8e44ad; /* Purple */
+}
+
+.task6 {
+    background-color: #37336b; /* Light Green */
+}
+
+.task7 {
+    background-color: #da079e; /* Dark Orange */
+}
