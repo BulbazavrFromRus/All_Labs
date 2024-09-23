@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="lab4.css">
+</head>
+<body>
+
+<div id="output" class="output"></div>
+
+<script>
+    // Функция для вывода текста
+    function displayText(text, taskClass) {
+        const outputDiv = document.getElementById('output');
+        const taskDiv = document.createElement('div');
+        taskDiv.className = 'output ' + taskClass;
+        taskDiv.innerHTML = text + "<br>"; // Используем <br> для переноса строки
+        outputDiv.appendChild(taskDiv);
+    }
+
+    // Функция для вывода массива
+    function displayArray(array) {
+        array.forEach(function(item) {
+            displayText(item);
+        });
+    }
+
+    // Первое задание
+    displayText("1. Дан массив с элементами ['Привет, ', 'мир', '!']. Необходимо вывести 'Привет, мир!'.");
+    let array1 = ['Привет, ', 'мир', '!'];
+    let result1 = array1.join('');
+    displayText(result1);
+    displayText("\n");
+
+    // Второе задание
+    displayText("2. Заменить первый элемент на 'Пока,'.");
+    let array2 = ['Привет, ', 'мир', '!'];
+    array2[0] = 'Пока,';
+    array2.forEach(function(item) {
+        displayText(item);
+    });
+    displayText("\n");
+
+    // Третье задание
+    displayText("3. Получить массив позиций всех нулей в строке '023m0df0dfg0'.");
+    let string = '023m0df0dfg0';
+    let zeroPositions = [];
+    for(let i = 0; i < string.length; ++i) {
+        if(string[i] === '0') {
+            zeroPositions.push(i);
+        }
+    }
+    zeroPositions.forEach(function(item) {
+        displayText(item);
+    });
+    displayText("\n");
+
+    // Четвёртое задание
+    displayText("4. Создать массив из 10 элементов с случайными числами от 0 до 100 и найти числа с цифрой '5'.");
+    let randomArray = Array.from({length: 10}, () => Math.floor(Math.random() * 100));
+    let arrayWithFive = randomArray.filter(num => num.toString().includes('5'));
+    displayText("Массив с рандомными значениями: ");
+    displayArray(randomArray);
+    displayText("Массив с числами, в которых есть цифра 5");
+    displayArray(arrayWithFive);
+    displayText("\n");
+
+    // Пятое задание
+    displayText("5. Слить два массива.");
+    function mergeArrays(arr1, arr2) {
+        const mergedArray = [];
+        const maxLength = Math.max(arr1.length, arr2.length);
+        for (let i = 0; i < maxLength; i++) {
+            if (i < arr1.length) {
+                mergedArray.push(arr1[i]);
+            }
+            if (i < arr2.length) {
+                mergedArray.push(arr2[i]);
+            }
+        }
+        return mergedArray;
+    }
+    let numArray = [1, 2, 3];
+    let charArray = ['a', 'b', 'c'];
+    let resultArray = mergeArrays(numArray, charArray);
+    displayArray(resultArray);
+    displayText("\n");
+
+    // Шестое задание
+    displayText("6. Создать массив из 10 элементов и отсортировать по убыванию.");
+    let randomArrayNew = Array.from({length: 10}, () => Math.floor(Math.random() * 100));
+    let sortDescArray = [...randomArrayNew].sort((a, b) => b - a);
+    displayText("Исходный массив: ");
+    displayArray(randomArrayNew);
+    displayText("Отсортированный массив по убыванию: ");
+    displayArray(sortDescArray);
+    displayText("\n");
+
+    // Седьмое задание
+    displayText("7. Отсортировать два массива по алфавиту.");
+    let russianDays = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+    let englishDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    let sortedRussianDays = russianDays.sort();
+    let sortedEnglishDays = englishDays.sort();
+    displayText("Отсортированный массив на русском: ");
+    displayArray(sortedRussianDays);
+    displayText("Отсортированный массив на английском:");
+    displayArray(sortedEnglishDays);
+    displayText("\n");
+
+    // Восьмое задание
+    displayText("8. Отсортировать массив цветовых строк по длине.");
+    let colors = ['orange', 'red', 'green', 'blue'];
+    let sortedColors = colors.sort((a, b) => a.length - b.length);
+    displayText("Отсортированный массив по длине строки: ");
+    displayArray(sortedColors);
+    displayText("\n");
+
+    // Девятое задание
+    displayText("9. Создать массив из 8 элементов с случайными числами от 0 до 50 и найти частное сумм первых и вторых половин.");
+    let randomArrayNewEight = Array.from({length: 8}, () => Math.floor(Math.random() * 50));
+    let firstPart = randomArrayNewEight.slice(0, 4);
+    let secondPart = randomArrayNewEight.slice(4, 8);
+    let sumFirstPart = firstPart.reduce((accumulator, nums) => accumulator + nums, 0);
+    let sumSecondPart = secondPart.reduce((accumulator, nums) => accumulator + nums, 0);
+    let quotient = sumSecondPart !== 0 ? (sumFirstPart / sumSecondPart) : null;
+
+    displayText('Исходный массив:');
+    displayArray(randomArrayNewEight);
+    displayText('Сумма первой половины: ' + sumFirstPart);
+    displayText('Сумма второй половины: ' + sumSecondPart);
+    displayText('Частное суммы первой и второй половин: ' + quotient);
+
+
+    displayText("\n");
+
+    displayText("10. Создать массив из 10 элементов. Заполнить случайными числами от -100 до 100. Подсчитайте количество отрицательных чисел в этом массиве. Вывести на консоль массив и результат проверки.");
+
+    let randomArrayNewRandom = Array.from({ length: 10 }, () =>  Math.floor(Math.random() * 201) - 100);
+
+
+let negativeCount = randomArrayNewRandom.filter(num => num < 0).length;
+
+
+displayText('Сгенерированный массив: ' + randomArrayNewRandom.join(', '));
+displayText('Количество отрицательных чисел: ' + negativeCount);
+
+displayText("\n");
+displayText("11. Создать массив из 10 элементов. Заполнить случайными числами от -50 до 50. Оставьте в нем только положительные и четные числа. Вывести на консоль оба массива.");
+
+let randomArray50 = Array.from({ length: 10 }, () => Math.floor(Math.random() * 101) - 50);
+
+
+let filteredArray = randomArray50.filter(num => num > 0 && num % 2 === 0);
+
+
+displayText('Исходный массив: ' + randomArray50.join(', '));
+displayText('Массив положительных четных чисел: ' + filteredArray.join(', '));
+
+
+displayText("\n");
+
+displayText("12. Придумать некоторую строку с буквами и цифрами. Получить позицию первой и последный цифры в этой строке (начиная с 1). Вывести на консоль строку и результаты .");
+
+
+let inputString = "abc123def456gh789"; // Замените на вашу строку по необходимости
+
+// Находим первую цифру
+let firstDigitIndex = inputString.search(/\d+/);
+let firstDigitPosition = firstDigitIndex !== -1 ? firstDigitIndex + 1 : -1; // Добавляем 1 для позиции от 1
+
+// Находим последнюю цифру
+let lastDigitIndex = inputString.search(/\d(?=[^\d]*$)/); // Ищем последнюю цифру
+let lastDigitPosition = lastDigitIndex !== -1 ? lastDigitIndex + 1 : -1; // Добавляем 1 для позиции от 1
+
+
+displayText('Исходная строка: ' + inputString);
+displayText('Позиция первой цифры: ' + (firstDigitPosition !== -1 ? firstDigitPosition : "Нет цифр"));
+displayText('Позиция последней цифры: ' + (lastDigitPosition !== -1 ? lastDigitPosition : "Нет цифр"));
+
+
+</script>
+
+</body>
+</html>
