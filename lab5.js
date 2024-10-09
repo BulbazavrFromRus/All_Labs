@@ -109,16 +109,17 @@ displayText("<br>");
 var firstNum3 = Math.floor(Math.random() * 50) + 1;
 var secondNum3 = Math.floor(Math.random() * 50) + 1;
 var thirdNum3 = Math.floor(Math.random() * 50) + 1;
-displayText("7. \u0422\u0440\u0438 \u0447\u0438\u0441\u043B\u0430: ".concat(firstNum3, ", ").concat(secondNum3, ", ").concat(thirdNum3));
+var forthdNum3 = Math.floor(Math.random() * 50) + 1;
+displayText("7. \u0422\u0440\u0438 \u0447\u0438\u0441\u043B\u0430: ".concat(firstNum3, ", ").concat(secondNum3, ", ").concat(thirdNum3, ", ").concat(forthdNum3));
 // Среднее арифметическое
-var average = (firstNum3 + secondNum3 + thirdNum3) / 3;
+var average = (firstNum3 + secondNum3 + thirdNum3 + forthdNum3) / 4;
 displayText("\u0421\u0440\u0435\u0434\u043D\u0435\u0435 \u0430\u0440\u0438\u0444\u043C\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435: ".concat(average));
 // Сумма квадратов
-var sumOfSquares = Math.pow(firstNum3, 2) + Math.pow(secondNum3, 2) + Math.pow(thirdNum3, 2);
+var sumOfSquares = Math.pow(firstNum3, 2) + Math.pow(secondNum3, 2) + Math.pow(thirdNum3, 2) + Math.pow(forthdNum3, 2);
 displayText("\u0421\u0443\u043C\u043C\u0430 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043E\u0432: ".concat(sumOfSquares));
 // Наибольшее
-var maxValue = Math.max(firstNum3, secondNum3, thirdNum3);
+var maxValue = Math.max(firstNum3, secondNum3, thirdNum3, forthdNum3);
 displayText("\u041D\u0430\u0438\u0431\u043E\u043B\u044C\u0448\u0435\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435: ".concat(maxValue));
 // Наименьшее
-var minValue = Math.min(firstNum3, secondNum3, thirdNum3);
+var minValue = Math.min(firstNum3, secondNum3, thirdNum3, forthdNum3);
 displayText("\u041D\u0430\u0438\u043C\u0435\u043D\u044C\u0448\u0435\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435: ".concat(minValue));

@@ -4,7 +4,7 @@ function displayText(text: string, taskClass?: string): void {
     if (outputDiv) {  // Проверяем, что элемент найден
         const taskDiv = document.createElement('div');
         taskDiv.className = 'output ' + (taskClass || '');
-        taskDiv.innerHTML = text + "<br>"; // Используем <br> для переноса строки
+        taskDiv.innerHTML = text + "<br>";
         outputDiv.appendChild(taskDiv);
     }
 }
@@ -47,12 +47,12 @@ zeroPositions.forEach((item) => {
 displayText("\n");
 
 // Четвёртое задание
-displayText("4. Создать массив из 10 элементов с случайными числами от 0 до 100 и найти числа с цифрой '5'.");
-let randomArray: number[] = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-let arrayWithFive: number[] = randomArray.filter(num => num.toString().includes('5'));
+displayText("4. Создать массив из 10 элементов с случайными числами от 0 до 10000 и найти числа с цифрой '11'.");
+let randomArray: number[] = Array.from({ length: 10 }, () => Math.floor(Math.random() * 10000));
+let arrayWithFive: number[] = randomArray.filter(num => num.toString().includes('11'));
 displayText("Массив с рандомными значениями: ");
 displayArray(randomArray);
-displayText("Массив с числами, в которых есть цифра 5");
+displayText("Массив с числами, в которых есть цифра 11");
 displayArray(arrayWithFive);
 displayText("\n");
 
@@ -149,7 +149,7 @@ displayText("\n");
 // Двенадцатое задание
 displayText("12. Придумать некоторую строку с буквами и цифрами. Получить позицию первой и последный цифры в этой строке (начиная с 1). Вывести на консоль строку и результаты .");
 
-let inputString: string = "abc123def456gh789"; // Замените на вашу строку по необходимости
+let inputString: string = "abc123def456gh789"; 
 
 // Находим первую цифру
 let firstDigitIndex: number = inputString.search(/\d+/);
@@ -162,3 +162,4 @@ let lastDigitPosition: number = lastDigitIndex !== -1 ? lastDigitIndex + 1 : -1;
 displayText('Исходная строка: ' + inputString);
 displayText('Позиция первой цифры: ' + (firstDigitPosition !== -1 ? firstDigitPosition : "Нет цифр"));
 displayText('Позиция последней цифры: ' + (lastDigitPosition !== -1 ? lastDigitPosition : "Нет цифр"));
+

@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #puzzle-container {
+    position: relative;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue; 
+    margin: 5px;
+    display: inline-block;
+  }
+  

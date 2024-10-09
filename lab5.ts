@@ -125,21 +125,25 @@ displayText("<br>");
 let firstNum3: number = Math.floor(Math.random() * 50) + 1;
 let secondNum3: number = Math.floor(Math.random() * 50) + 1;
 let thirdNum3: number = Math.floor(Math.random() * 50) + 1;
+let forthdNum3: number = Math.floor(Math.random() * 50) + 1;
 
-displayText(`7. Три числа: ${firstNum3}, ${secondNum3}, ${thirdNum3}`);
+displayText(`7. Три числа: ${firstNum3}, ${secondNum3}, ${thirdNum3}, ${forthdNum3}`);
 
 // Среднее арифметическое
-let average: number = (firstNum3 + secondNum3 + thirdNum3) / 3;
+let average: number = (firstNum3 + secondNum3 + thirdNum3 + forthdNum3) / 4;
 displayText(`Среднее арифметическое: ${average}`);
 
 // Сумма квадратов
-let sumOfSquares: number = firstNum3 ** 2 + secondNum3 ** 2 + thirdNum3 ** 2;
+let sumOfSquares: number = firstNum3 ** 2 + secondNum3 ** 2 + thirdNum3 ** 2 + forthdNum3 **2;
 displayText(`Сумма квадратов: ${sumOfSquares}`);
 
 // Наибольшее
-let maxValue: number = Math.max(firstNum3, secondNum3, thirdNum3);
+let maxValue: number = Math.max(firstNum3, secondNum3, thirdNum3, forthdNum3);
 displayText(`Наибольшее значение: ${maxValue}`);
 
 // Наименьшее
-let minValue: number = Math.min(firstNum3, secondNum3, thirdNum3);
+let minValue: number = Math.min(firstNum3, secondNum3, thirdNum3, forthdNum3);
 displayText(`Наименьшее значение: ${minValue}`);
+
+
+

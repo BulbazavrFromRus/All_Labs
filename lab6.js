@@ -13,7 +13,7 @@ function displayText(text, taskClass) {
     if (outputDiv) { // Проверяем, что элемент найден
         var taskDiv = document.createElement('div');
         taskDiv.className = 'output ' + (taskClass || '');
-        taskDiv.innerHTML = text + "<br>"; // Используем <br> для переноса строки
+        taskDiv.innerHTML = text + "<br>";
         outputDiv.appendChild(taskDiv);
     }
 }
@@ -51,12 +51,12 @@ zeroPositions.forEach(function (item) {
 });
 displayText("\n");
 // Четвёртое задание
-displayText("4. Создать массив из 10 элементов с случайными числами от 0 до 100 и найти числа с цифрой '5'.");
-var randomArray = Array.from({ length: 10 }, function () { return Math.floor(Math.random() * 100); });
-var arrayWithFive = randomArray.filter(function (num) { return num.toString().includes('5'); });
+displayText("4. Создать массив из 10 элементов с случайными числами от 0 до 10000 и найти числа с цифрой '11'.");
+var randomArray = Array.from({ length: 10 }, function () { return Math.floor(Math.random() * 10000); });
+var arrayWithFive = randomArray.filter(function (num) { return num.toString().includes('11'); });
 displayText("Массив с рандомными значениями: ");
 displayArray(randomArray);
-displayText("Массив с числами, в которых есть цифра 5");
+displayText("Массив с числами, в которых есть цифра 11");
 displayArray(arrayWithFive);
 displayText("\n");
 // Пятое задание
@@ -136,7 +136,7 @@ displayText('Массив положительных четных чисел: ' 
 displayText("\n");
 // Двенадцатое задание
 displayText("12. Придумать некоторую строку с буквами и цифрами. Получить позицию первой и последный цифры в этой строке (начиная с 1). Вывести на консоль строку и результаты .");
-var inputString = "abc123def456gh789"; // Замените на вашу строку по необходимости
+var inputString = "abc123def456gh789";
 // Находим первую цифру
 var firstDigitIndex = inputString.search(/\d+/);
 var firstDigitPosition = firstDigitIndex !== -1 ? firstDigitIndex + 1 : -1; // Добавляем 1 для позиции от 1
